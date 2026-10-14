@@ -15,7 +15,7 @@
   --gold: #f4c542;
   --bg: #090909;
   --card: #141414;
-  --line: #ffffff17;
+  --line: rgba(255,255,255,.09);
   --muted: #a5a5a5;
 }
 
@@ -51,9 +51,10 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+[tabindex]:focus-visible {
   outline: 2px solid var(--gold);
-  outline-offset: 5px;
+  outline-offset: 4px;
 }
 
 ::selection {
@@ -88,7 +89,7 @@ button:focus-visible {
   height: 600px;
   border-radius: 50%;
   filter: blur(100px);
-  background: #f4c54212;
+  background: rgba(244,197,66,.07);
   animation: drift 18s ease-in-out infinite alternate;
 }
 
@@ -107,7 +108,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(
-    #ffffff13 .6px,
+    rgba(255,255,255,.08) .6px,
     transparent .6px
   );
   background-size: 7px 7px;
@@ -130,7 +131,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: #090909df;
+  background: rgba(9,9,9,.88);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
@@ -164,8 +165,8 @@ nav {
   color: var(--gold);
 }
 
-.navlinks .contact-link {
-  border: 1px solid #f4c54255;
+.contact-link {
+  border: 1px solid rgba(244,197,66,.35);
   padding: 11px 18px;
   border-radius: 30px;
 }
@@ -195,9 +196,9 @@ nav {
   align-items: center;
   gap: 9px;
   padding: 10px 14px;
-  border: 1px solid #f4c54230;
+  border: 1px solid rgba(244,197,66,.2);
   border-radius: 30px;
-  background: #f4c54208;
+  background: rgba(244,197,66,.03);
   letter-spacing: 1px;
 }
 
@@ -259,9 +260,9 @@ h1 {
   font-size: 12px;
   font-weight: 600;
   display: inline-flex;
-  gap: 23px;
   align-items: center;
   justify-content: center;
+  gap: 18px;
   background: var(--gold);
   color: #090909;
   border: 1px solid var(--gold);
@@ -271,13 +272,13 @@ h1 {
 
 .btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px #f4c54225;
+  box-shadow: 0 8px 25px rgba(244,197,66,.15);
 }
 
 .btn.outline {
   color: #fff;
   background: transparent;
-  border-color: #ffffff30;
+  border-color: rgba(255,255,255,.2);
 }
 
 .meta {
@@ -291,6 +292,13 @@ h1 {
   content: "↗";
   color: var(--gold);
   margin-right: 7px;
+}
+
+.website-link {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  margin-top: 17px;
 }
 
 /* FLOATING DASHBOARD */
@@ -307,7 +315,7 @@ h1 {
   position: absolute;
   width: 390px;
   height: 390px;
-  border: 1px solid #f4c54225;
+  border: 1px solid rgba(244,197,66,.15);
   border-radius: 50%;
   animation: spin 40s linear infinite;
 }
@@ -321,7 +329,7 @@ h1 {
   height: 10px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 22px #f4c54277;
+  box-shadow: 0 0 22px rgba(244,197,66,.5);
 }
 
 .ring.two {
@@ -336,9 +344,9 @@ h1 {
   width: 95%;
   padding: 26px;
   background: linear-gradient(140deg, #222, #111);
-  border: 1px solid #ffffff25;
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: 18px;
-  box-shadow: 0 35px 70px #0009;
+  box-shadow: 0 35px 70px rgba(0,0,0,.6);
   transform: rotate(-4deg);
   animation: float 7s ease-in-out infinite;
 }
@@ -373,7 +381,7 @@ h1 {
   align-items: flex-end;
   gap: 12px;
   margin: 25px 0 17px;
-  border-bottom: 1px solid #ffffff20;
+  border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
 .chart i {
@@ -381,7 +389,7 @@ h1 {
   min-width: 0;
   background: linear-gradient(
     var(--gold),
-    #f4c54225
+    rgba(244,197,66,.15)
   );
   border-radius: 4px 4px 0 0;
   transform-origin: bottom;
@@ -411,7 +419,7 @@ h1 {
   color: #111;
   padding: 15px 20px;
   border-radius: 10px;
-  box-shadow: 0 10px 35px #0005;
+  box-shadow: 0 10px 35px rgba(0,0,0,.3);
   animation: bob 6s ease-in-out infinite;
 }
 
@@ -439,7 +447,7 @@ h1 {
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #1118;
+  background: rgba(17,17,17,.6);
   overflow: hidden;
 }
 
@@ -494,29 +502,41 @@ h2 {
   margin: 0;
 }
 
-/* CAMPAIGN RESULTS */
+h3 {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+/* FULL-WIDTH CAMPAIGN SCREENSHOTS */
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 35px;
 }
 
 .work-card {
+  min-width: 0;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 13px;
   overflow: hidden;
-  transition:
-    transform .3s,
-    border-color .3s,
-    box-shadow .3s;
+  transition: border-color .3s, box-shadow .3s;
 }
 
 .work-card:hover {
-  transform: translateY(-7px);
-  border-color: #f4c54260;
-  box-shadow: 0 15px 40px #0005;
+  border-color: rgba(244,197,66,.4);
+  box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.screenshot-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-color: var(--gold) #222;
+  scrollbar-width: thin;
+  background: #fff;
 }
 
 .screenshot {
@@ -524,6 +544,7 @@ h2 {
   border: 0;
   display: block;
   width: 100%;
+  min-width: 1050px;
   position: relative;
   cursor: zoom-in;
   background: #fff;
@@ -531,24 +552,46 @@ h2 {
 
 .screenshot img {
   width: 100%;
+  height: auto;
   display: block;
-  aspect-ratio: 1.75;
-  object-fit: contain;
 }
 
 .screenshot span {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 12px;
+  right: 12px;
   border-radius: 5px;
-  font-size: 9px;
-  padding: 6px 9px;
-  background: #000c;
+  font-size: 10px;
+  padding: 7px 10px;
+  background: rgba(0,0,0,.8);
   color: #fff;
 }
 
+.shot-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  gap: 12px;
+  background: #191919;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.open-shot {
+  background: transparent;
+  border: 1px solid rgba(244,197,66,.35);
+  color: var(--gold);
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
 .work-body {
-  padding: 23px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  column-gap: 35px;
+  padding: 27px 30px;
 }
 
 .label {
@@ -558,11 +601,10 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
-  font-size: 17px;
-  line-height: 1.5;
-  margin: 12px 0;
-  font-weight: 600;
+.work-body .label,
+.work-body h3,
+.work-body .period {
+  grid-column: 1;
 }
 
 .period {
@@ -573,24 +615,28 @@ h3 {
 .work-metrics {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--line);
-  padding-top: 17px;
-  margin-top: 20px;
+  align-items: center;
+  gap: 20px;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
 }
 
 .work-metrics strong {
-  font-size: 28px;
+  font-size: 35px;
   display: block;
   letter-spacing: -1px;
 }
 
 .work-metrics small {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--muted);
 }
 
 .work-body p {
-  font-size: 10px;
+  grid-column: 1 / -1;
+  font-size: 12px;
   line-height: 1.85;
   color: var(--muted);
   margin-bottom: 0;
@@ -608,7 +654,7 @@ h3 {
 
 .expertise {
   border-block: 1px solid var(--line);
-  background: #ffffff02;
+  background: rgba(255,255,255,.01);
 }
 
 .skills {
@@ -629,7 +675,7 @@ h3 {
 
 .skill:hover {
   transform: translateY(-5px);
-  border-color: #f4c54255;
+  border-color: rgba(244,197,66,.35);
 }
 
 .skill::after {
@@ -639,7 +685,7 @@ h3 {
   height: 100px;
   right: -65px;
   bottom: -65px;
-  background: #f4c54215;
+  background: rgba(244,197,66,.08);
   border-radius: 50%;
   transition: transform .4s;
 }
@@ -651,8 +697,8 @@ h3 {
 .icon {
   width: 43px;
   height: 43px;
-  border: 1px solid #f4c54233;
-  background: #f4c54209;
+  border: 1px solid rgba(244,197,66,.2);
+  background: rgba(244,197,66,.04);
   border-radius: 10px;
   display: grid;
   place-items: center;
@@ -678,7 +724,7 @@ h3 {
 .monogram {
   position: relative;
   background: linear-gradient(135deg, #242018, #0e0e0e);
-  border: 1px solid #f4c54235;
+  border: 1px solid rgba(244,197,66,.2);
   border-radius: 14px;
   min-height: 370px;
   display: flex;
@@ -693,7 +739,7 @@ h3 {
   position: absolute;
   width: 270px;
   height: 270px;
-  border: 1px solid #f4c54222;
+  border: 1px solid rgba(244,197,66,.15);
   border-radius: 50%;
 }
 
@@ -747,17 +793,17 @@ h3 {
   font-weight: 500;
 }
 
-/* FLOX ADS PROJECT */
+/* WEBSITE */
 
 .agency {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 50px;
   align-items: center;
-  border: 1px solid #f4c54230;
+  border: 1px solid rgba(244,197,66,.2);
   background: linear-gradient(
     110deg,
-    #f4c54208,
+    rgba(244,197,66,.03),
     #121212
   );
   padding: 44px;
@@ -806,12 +852,12 @@ h3 {
 
 .step {
   padding-top: 23px;
-  border-top: 1px solid #f4c54240;
+  border-top: 1px solid rgba(244,197,66,.25);
 }
 
 .step b {
   font-size: 28px;
-  color: #f4c54266;
+  color: rgba(244,197,66,.5);
 }
 
 .step p {
@@ -828,7 +874,7 @@ h3 {
   padding: 85px 0;
   background: radial-gradient(
     ellipse at 50% 100%,
-    #f4c54212,
+    rgba(244,197,66,.07),
     transparent 65%
   );
 }
@@ -866,40 +912,22 @@ footer {
   color: var(--muted);
 }
 
-/* SCREENSHOT LIGHTBOX */
+/* SCREENSHOT VIEWER */
 
 dialog {
   width: min(96vw, 1500px);
   max-width: 96vw;
-  border: 1px solid #ffffff30;
+  padding: 56px 12px 12px;
+  border: 1px solid rgba(255,255,255,.2);
   border-radius: 12px;
-  padding: 48px 12px 12px;
   background: #121212;
   color: white;
+  overflow: hidden;
 }
 
 dialog::backdrop {
-  background: #000d;
+  background: rgba(0,0,0,.88);
   backdrop-filter: blur(5px);
-}
-
-dialog img {
-  display: block;
-  width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  padding: 5px 12px;
-  background: #222;
-  color: #fff;
-  border: 1px solid #555;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .dialog-title {
@@ -907,9 +935,51 @@ dialog img {
   top: 17px;
   left: 15px;
   font-size: 11px;
+  max-width: 45%;
 }
 
-/* SCROLL REVEAL */
+.close,
+.zoom-toggle {
+  position: absolute;
+  top: 10px;
+  padding: 5px 12px;
+  background: #222;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close {
+  right: 12px;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.zoom-toggle {
+  right: 100px;
+  color: var(--gold);
+  border: 1px solid rgba(244,197,66,.35);
+}
+
+.zoom-stage {
+  overflow: auto;
+  max-height: 78vh;
+  background: #fff;
+  overscroll-behavior: contain;
+}
+
+.zoom-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+.zoom-stage.zoomed img {
+  width: var(--original-width, 2048px);
+  max-width: none;
+}
+
+/* REVEAL ANIMATION */
 
 .js .reveal {
   opacity: 0;
@@ -922,12 +992,10 @@ dialog img {
   transform: none;
 }
 
-/* KEYFRAMES */
+/* ANIMATIONS */
 
 @keyframes drift {
-  to {
-    transform: translate(100px, 90px);
-  }
+  to { transform: translate(100px,90px); }
 }
 
 @keyframes pulse {
@@ -938,79 +1006,36 @@ dialog img {
 }
 
 @keyframes shine {
-  to {
-    background-position: 200% center;
-  }
+  to { background-position: 200% center; }
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes float {
-  50% {
-    transform: translateY(-12px) rotate(-2deg);
-  }
+  50% { transform: translateY(-12px) rotate(-2deg); }
 }
 
 @keyframes bob {
-  50% {
-    transform: translateY(-8px);
-  }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes grow {
-  from {
-    transform: scaleY(.1);
-  }
-  to {
-    transform: scaleY(1);
-  }
+  from { transform: scaleY(.1); }
+  to { transform: scaleY(1); }
 }
 
 /* TABLET */
 
 @media (max-width: 950px) {
-  .hero {
-    gap: 25px;
-  }
-
-  .hero h1 {
-    font-size: 58px;
-  }
-
-  .ring {
-    width: 310px;
-    height: 310px;
-  }
-
-  .ring.two {
-    width: 250px;
-    height: 250px;
-  }
-
-  .work-grid {
-    gap: 12px;
-  }
-
-  .work-body {
-    padding: 18px;
-  }
-
-  .about {
-    gap: 35px;
-  }
-
-  .agency {
-    gap: 25px;
-    padding: 30px;
-  }
-
-  .skill {
-    padding: 22px;
-  }
+  .hero { gap: 25px; }
+  .hero h1 { font-size: 58px; }
+  .ring { width: 310px; height: 310px; }
+  .ring.two { width: 250px; height: 250px; }
+  .about { gap: 35px; }
+  .agency { gap: 25px; padding: 30px; }
+  .skill { padding: 22px; }
 }
 
 /* MOBILE */
@@ -1029,16 +1054,16 @@ dialog img {
   }
 
   .navlinks {
-    gap: 14px;
+    gap: 12px;
     font-size: 10px;
   }
 
-  .navlinks .hide-mobile {
+  .hide-mobile {
     display: none;
   }
 
-  .navlinks .contact-link {
-    padding: 9px 12px;
+  .contact-link {
+    padding: 9px 11px;
   }
 
   .hero {
@@ -1049,7 +1074,7 @@ dialog img {
   }
 
   .hero h1 {
-    font-size: clamp(46px, 12.6vw, 64px);
+    font-size: clamp(46px,12.6vw,64px);
     letter-spacing: -2.6px;
   }
 
@@ -1155,17 +1180,35 @@ dialog img {
     letter-spacing: -1px;
   }
 
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 23px;
-  }
-
   .work-body {
-    padding: 23px;
+    display: block;
+    padding: 22px;
   }
 
-  .screenshot img {
-    aspect-ratio: auto;
+  .work-metrics {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 17px 0 0;
+    margin-top: 18px;
+  }
+
+  .work-metrics strong {
+    font-size: 30px;
+  }
+
+  .screenshot {
+    min-width: 1100px;
+  }
+
+  .shot-tools {
+    font-size: 9px;
+    padding: 12px;
+    gap: 9px;
+  }
+
+  .open-shot {
+    font-size: 10px;
+    white-space: nowrap;
   }
 
   .skills {
@@ -1179,7 +1222,6 @@ dialog img {
 
   .skill h3 {
     font-size: 14px;
-    line-height: 1.5;
   }
 
   .skill p {
@@ -1235,7 +1277,6 @@ dialog img {
   .btn {
     font-size: 11px;
     padding: 14px 18px;
-    gap: 18px;
   }
 
   footer {
@@ -1245,6 +1286,23 @@ dialog img {
 
   .note {
     font-size: 9px;
+  }
+
+  .dialog-title {
+    font-size: 9px;
+    top: 20px;
+    max-width: 35%;
+  }
+
+  .zoom-toggle {
+    font-size: 10px;
+    right: 83px;
+    padding: 6px 8px;
+  }
+
+  .close {
+    font-size: 10px;
+    padding: 6px 8px;
   }
 }
 
@@ -1288,8 +1346,14 @@ dialog img {
       <a href="#work">Results</a>
       <a class="hide-mobile" href="#expertise">Expertise</a>
       <a class="hide-mobile" href="#about">About</a>
-      <a class="contact-link" href="#contact">
-        Let’s connect ↗
+
+      <a
+        class="contact-link"
+        href="https://floxads.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        floxads.com ↗
       </a>
     </div>
   </nav>
@@ -1340,6 +1404,15 @@ dialog img {
       <span>Meta Ads specialist</span>
       <span>Open to opportunities</span>
     </div>
+
+    <a
+      class="website-link"
+      href="https://floxads.com/"
+      target="_blank"
+      rel="noopener"
+    >
+      My website: www.floxads.com ↗
+    </a>
   </div>
 
   <div class="visual reveal">
@@ -1406,12 +1479,13 @@ dialog img {
   </div>
 </div>
 
-<!-- CAMPAIGN SCREENSHOTS -->
+<!-- FULL-WIDTH SCREENSHOTS -->
 
 <section id="work" class="container section">
   <div class="section-heading reveal">
     <div>
       <div class="eyebrow">01 / Campaign evidence</div>
+
       <h2>
         The work behind<br>
         the <span class="gold">numbers.</span>
@@ -1427,20 +1501,37 @@ dialog img {
 
   <div class="work-grid">
 
+    <!-- SCREENSHOT 01 -->
+
     <article class="work-card reveal">
-      <button
-        class="screenshot"
-        data-title="Campaign snapshot 01"
-        aria-label="Open campaign screenshot 01"
+      <div
+        class="screenshot-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Campaign screenshot 01: scroll horizontally to read details"
       >
-        <!-- FIRST SCREENSHOT URL HERE -->
-        <img
-          src="campaign-01.jpg"
-          alt="FLOX ADS Meta campaigns: August 27 to September 2, 2026"
-          loading="lazy"
+        <button
+          class="screenshot"
+          data-title="Campaign snapshot 01"
+          aria-label="Open campaign screenshot 01"
         >
-        <span>View full screenshot ↗</span>
-      </button>
+          <!-- REPLACE WITH FIRST SCREENSHOT URL -->
+          <img
+            src="campaign-01.jpg"
+            alt="FLOX ADS Meta campaigns: August 27 to September 2, 2026"
+            loading="lazy"
+          >
+
+          <span>View full screenshot ↗</span>
+        </button>
+      </div>
+
+      <div class="shot-tools">
+        <span>
+          Swipe sideways to read details · Original screenshot
+        </span>
+        <button class="open-shot">Open & zoom ↗</button>
+      </div>
 
       <div class="work-body">
         <div class="label">Meta Ads / Snapshot 01</div>
@@ -1452,6 +1543,7 @@ dialog img {
             <strong>714</strong>
             <small>Subscribe events</small>
           </div>
+
           <div>
             <strong>₹4.58</strong>
             <small>Lowest cost / event</small>
@@ -1466,20 +1558,37 @@ dialog img {
       </div>
     </article>
 
+    <!-- SCREENSHOT 02 -->
+
     <article class="work-card reveal">
-      <button
-        class="screenshot"
-        data-title="Campaign snapshot 02"
-        aria-label="Open campaign screenshot 02"
+      <div
+        class="screenshot-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Campaign screenshot 02: scroll horizontally to read details"
       >
-        <!-- SECOND SCREENSHOT URL HERE -->
-        <img
-          src="campaign-02.jpg"
-          alt="FLOX ADS Meta campaigns: August 16 to September 14, 2026"
-          loading="lazy"
+        <button
+          class="screenshot"
+          data-title="Campaign snapshot 02"
+          aria-label="Open campaign screenshot 02"
         >
-        <span>View full screenshot ↗</span>
-      </button>
+          <!-- REPLACE WITH SECOND SCREENSHOT URL -->
+          <img
+            src="campaign-02.jpg"
+            alt="FLOX ADS Meta campaigns: August 16 to September 14, 2026"
+            loading="lazy"
+          >
+
+          <span>View full screenshot ↗</span>
+        </button>
+      </div>
+
+      <div class="shot-tools">
+        <span>
+          Swipe sideways to read details · Original screenshot
+        </span>
+        <button class="open-shot">Open & zoom ↗</button>
+      </div>
 
       <div class="work-body">
         <div class="label">Meta Ads / Snapshot 02</div>
@@ -1491,6 +1600,7 @@ dialog img {
             <strong>945</strong>
             <small>Subscribe events</small>
           </div>
+
           <div>
             <strong>₹7.15</strong>
             <small>Lowest cost / event</small>
@@ -1504,20 +1614,37 @@ dialog img {
       </div>
     </article>
 
+    <!-- SCREENSHOT 03 -->
+
     <article class="work-card reveal">
-      <button
-        class="screenshot"
-        data-title="Campaign snapshot 03"
-        aria-label="Open campaign screenshot 03"
+      <div
+        class="screenshot-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Campaign screenshot 03: scroll horizontally to read details"
       >
-        <!-- THIRD SCREENSHOT URL HERE -->
-        <img
-          src="campaign-03.jpg"
-          alt="FLOX ADS Meta campaigns: September 16 to September 18, 2026"
-          loading="lazy"
+        <button
+          class="screenshot"
+          data-title="Campaign snapshot 03"
+          aria-label="Open campaign screenshot 03"
         >
-        <span>View full screenshot ↗</span>
-      </button>
+          <!-- REPLACE WITH THIRD SCREENSHOT URL -->
+          <img
+            src="campaign-03.jpg"
+            alt="FLOX ADS Meta campaigns: September 16 to September 18, 2026"
+            loading="lazy"
+          >
+
+          <span>View full screenshot ↗</span>
+        </button>
+      </div>
+
+      <div class="shot-tools">
+        <span>
+          Swipe sideways to read details · Original screenshot
+        </span>
+        <button class="open-shot">Open & zoom ↗</button>
+      </div>
 
       <div class="work-body">
         <div class="label">Meta Ads / Snapshot 03</div>
@@ -1529,6 +1656,7 @@ dialog img {
             <strong>428</strong>
             <small>Subscribe events</small>
           </div>
+
           <div>
             <strong>₹8.72</strong>
             <small>Lowest cost / event</small>
@@ -1560,6 +1688,7 @@ dialog img {
     <div class="section-heading reveal">
       <div>
         <div class="eyebrow">02 / Core expertise</div>
+
         <h2>
           Built for the complete<br>
           <span class="gold">campaign journey.</span>
@@ -1635,7 +1764,6 @@ dialog img {
 
 <section id="about" class="container section">
   <div class="about">
-
     <div class="monogram reveal">
       <b class="gradient">PR</b>
       <span>PRANSHU RATHAUR</span>
@@ -1691,11 +1819,10 @@ dialog img {
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- FLOX ADS -->
+<!-- FLOX ADS WEBSITE -->
 
 <section class="container">
   <div class="agency reveal">
@@ -1836,6 +1963,15 @@ dialog img {
 
 <footer class="container">
   <span>© 2026 Pranshu Rathaur · FLOX ADS</span>
+
+  <a
+    href="https://floxads.com/"
+    target="_blank"
+    rel="noopener"
+  >
+    www.floxads.com ↗
+  </a>
+
   <a href="#home">Back to top ↑</a>
 </footer>
 
@@ -1843,111 +1979,178 @@ dialog img {
 
 <dialog id="lightbox" aria-label="Full campaign screenshot">
   <span class="dialog-title"></span>
+
+  <button class="zoom-toggle" aria-pressed="false">
+    Zoom 100%
+  </button>
+
   <button class="close" aria-label="Close screenshot">
     Close ×
   </button>
-  <img alt="Full campaign screenshot">
+
+  <div
+    class="zoom-stage"
+    tabindex="0"
+    role="region"
+    aria-label="Screenshot viewer: scroll to explore"
+  >
+    <img alt="Full campaign screenshot">
+  </div>
 </dialog>
 
 <script>
-document.documentElement.classList.add("js");
+(function () {
+  "use strict";
 
-/* SCROLL REVEAL */
+  document.documentElement.classList.add("js");
 
-const items = document.querySelectorAll(".reveal");
+  /* SCROLL REVEAL */
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
+  const items = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+
+    items.forEach(item => observer.observe(item));
+  } else {
+    items.forEach(item => item.classList.add("visible"));
+  }
+
+  /* SCROLL PROGRESS */
+
+  const progress = document.querySelector(".progress");
+  let ticking = false;
+
+  function updateProgress() {
+    const distance =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const percentage =
+      distance > 0 ? window.scrollY / distance * 100 : 0;
+
+    progress.style.width =
+      Math.max(0, Math.min(100, percentage)) + "%";
+
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
     },
-    { threshold: 0.08 }
+    { passive: true }
   );
 
-  items.forEach(item => observer.observe(item));
-} else {
-  items.forEach(item => item.classList.add("visible"));
-}
+  window.addEventListener("resize", updateProgress);
+  window.addEventListener("load", updateProgress);
 
-/* SCROLL PROGRESS */
+  updateProgress();
 
-const progress = document.querySelector(".progress");
-let ticking = false;
+  /* SCREENSHOT VIEWER */
 
-function updateProgress() {
-  const distance =
-    document.documentElement.scrollHeight - window.innerHeight;
+  const lightbox = document.getElementById("lightbox");
+  const stage = lightbox.querySelector(".zoom-stage");
+  const largeImage = stage.querySelector("img");
+  const zoomButton = lightbox.querySelector(".zoom-toggle");
+  const title = lightbox.querySelector(".dialog-title");
 
-  progress.style.width =
-    (distance > 0 ? window.scrollY / distance * 100 : 0) + "%";
+  let lastButton = null;
 
-  ticking = false;
-}
-
-window.addEventListener(
-  "scroll",
-  () => {
-    if (!ticking) {
-      requestAnimationFrame(updateProgress);
-      ticking = true;
-    }
-  },
-  { passive: true }
-);
-
-window.addEventListener("resize", updateProgress);
-
-updateProgress();
-
-/* SCREENSHOT LIGHTBOX */
-
-const lightbox = document.getElementById("lightbox");
-let lastButton;
-
-document.querySelectorAll(".screenshot").forEach(button => {
-  button.addEventListener("click", () => {
-    lastButton = button;
-
+  function openScreenshot(button, focusTarget) {
     const source = button.querySelector("img");
 
-    lightbox.querySelector("img").src = source.src;
-    lightbox.querySelector("img").alt = source.alt;
+    lastButton = focusTarget || button;
 
-    lightbox.querySelector(".dialog-title").textContent =
-      button.dataset.title;
+    stage.classList.remove("zoomed");
+    zoomButton.textContent = "Zoom 100%";
+    zoomButton.setAttribute("aria-pressed", "false");
 
-    lightbox.showModal();
-  });
-});
+    largeImage.src = source.currentSrc || source.src;
+    largeImage.alt = source.alt;
+    title.textContent = button.dataset.title;
 
-lightbox.querySelector(".close").addEventListener(
-  "click",
-  () => lightbox.close()
-);
-
-lightbox.addEventListener("close", () => {
-  lastButton?.focus();
-});
-
-lightbox.addEventListener("click", event => {
-  if (event.target === lightbox) {
-    const rect = lightbox.getBoundingClientRect();
-
-    if (
-      event.clientX < rect.left ||
-      event.clientX > rect.right ||
-      event.clientY < rect.top ||
-      event.clientY > rect.bottom
-    ) {
-      lightbox.close();
+    if (typeof lightbox.showModal === "function") {
+      lightbox.showModal();
+      stage.scrollTo(0, 0);
+    } else {
+      window.open(largeImage.src, "_blank", "noopener");
     }
   }
-});
+
+  document.querySelectorAll(".screenshot").forEach(button => {
+    button.addEventListener("click", () => {
+      openScreenshot(button);
+    });
+  });
+
+  document.querySelectorAll(".open-shot").forEach(button => {
+    button.addEventListener("click", () => {
+      const screenshot =
+        button.closest(".work-card").querySelector(".screenshot");
+
+      openScreenshot(screenshot, button);
+    });
+  });
+
+  largeImage.addEventListener("load", () => {
+    stage.style.setProperty(
+      "--original-width",
+      largeImage.naturalWidth + "px"
+    );
+  });
+
+  zoomButton.addEventListener("click", () => {
+    const expanded = stage.classList.toggle("zoomed");
+
+    zoomButton.textContent =
+      expanded ? "Fit to screen" : "Zoom 100%";
+
+    zoomButton.setAttribute(
+      "aria-pressed",
+      String(expanded)
+    );
+
+    stage.scrollTo(0, 0);
+  });
+
+  lightbox.querySelector(".close").addEventListener(
+    "click",
+    () => lightbox.close()
+  );
+
+  lightbox.addEventListener("close", () => {
+    if (lastButton) lastButton.focus();
+  });
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) {
+      const rect = lightbox.getBoundingClientRect();
+
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      ) {
+        lightbox.close();
+      }
+    }
+  });
+})();
 </script>
 
 </body>
