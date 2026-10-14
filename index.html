@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pranshu Rathaur | Performance Marketer</title>
+
+<meta name="description" content="Pranshu Rathaur — Performance marketer in Jaipur with 1.5+ years of hands-on experience in Meta Ads, conversion tracking, landing pages and campaign optimization.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #f4c542;
+  --bg: #090909;
+  --card: #141414;
+  --line: #ffffff17;
+  --muted: #a5a5a5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #fff;
+  font-family: "Poppins", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+
+.container {
+  width: min(1180px, calc(100% - 44px));
+  margin: auto;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+/* ANIMATED BACKGROUND */
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(100px);
+  background: #f4c54212;
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+.ambient::before {
+  top: -300px;
+  right: -200px;
+}
+
+.ambient::after {
+  bottom: -350px;
+  left: -300px;
+  animation-delay: -9s;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    #ffffff13 .6px,
+    transparent .6px
+  );
+  background-size: 7px 7px;
+  opacity: .2;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--gold);
+  z-index: 100;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #090909df;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.7px;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  font-size: 12px;
+}
+
+.navlinks a:hover {
+  color: var(--gold);
+}
+
+.navlinks .contact-link {
+  border: 1px solid #f4c54255;
+  padding: 11px 18px;
+  border-radius: 30px;
+}
+
+/* HERO */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  gap: 65px;
+  align-items: center;
+  padding: 95px 0 75px;
+  min-height: 760px;
+}
+
+.badge,
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid #f4c54230;
+  border-radius: 30px;
+  background: #f4c54208;
+  letter-spacing: 1px;
+}
+
+.badge i {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--gold);
+  animation: pulse 2s infinite;
+}
+
+h1 {
+  font-size: clamp(50px, 6.3vw, 78px);
+  line-height: 1.09;
+  letter-spacing: -3.5px;
+  margin: 24px 0;
+  font-weight: 800;
+}
+
+.gradient {
+  background: linear-gradient(
+    110deg,
+    #fff0b2,
+    var(--gold),
+    #b98515,
+    var(--gold)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 7s linear infinite;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+.hero-copy {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--muted);
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 28px 0;
+}
+
+.btn {
+  padding: 15px 22px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 23px;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: #090909;
+  border: 1px solid var(--gold);
+  transition: transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px #f4c54225;
+}
+
+.btn.outline {
+  color: #fff;
+  background: transparent;
+  border-color: #ffffff30;
+}
+
+.meta {
+  display: flex;
+  gap: 22px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.meta span::before {
+  content: "↗";
+  color: var(--gold);
+  margin-right: 7px;
+}
+
+/* FLOATING DASHBOARD */
+
+.visual {
+  position: relative;
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  perspective: 1000px;
+}
+
+.ring {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid #f4c54225;
+  border-radius: 50%;
+  animation: spin 40s linear infinite;
+}
+
+.ring::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 57px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 22px #f4c54277;
+}
+
+.ring.two {
+  width: 320px;
+  height: 320px;
+  border-style: dashed;
+  animation-direction: reverse;
+}
+
+.dashboard {
+  position: relative;
+  width: 95%;
+  padding: 26px;
+  background: linear-gradient(140deg, #222, #111);
+  border: 1px solid #ffffff25;
+  border-radius: 18px;
+  box-shadow: 0 35px 70px #0009;
+  transform: rotate(-4deg);
+  animation: float 7s ease-in-out infinite;
+}
+
+.dash-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.dash-top b {
+  color: var(--gold);
+}
+
+.dash-number {
+  font-size: 63px;
+  font-weight: 700;
+  letter-spacing: -3px;
+  margin-top: 19px;
+}
+
+.dash-caption {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.chart {
+  height: 125px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 25px 0 17px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.chart i {
+  flex: 1;
+  min-width: 0;
+  background: linear-gradient(
+    var(--gold),
+    #f4c54225
+  );
+  border-radius: 4px 4px 0 0;
+  transform-origin: bottom;
+  animation: grow 1.5s both;
+}
+
+.chart i:nth-child(1) { height: 26%; }
+.chart i:nth-child(2) { height: 43%; animation-delay: .1s; }
+.chart i:nth-child(3) { height: 36%; animation-delay: .2s; }
+.chart i:nth-child(4) { height: 61%; animation-delay: .3s; }
+.chart i:nth-child(5) { height: 53%; animation-delay: .4s; }
+.chart i:nth-child(6) { height: 77%; animation-delay: .5s; }
+.chart i:nth-child(7) { height: 96%; animation-delay: .6s; }
+
+.dash-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.float-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  background: var(--gold);
+  color: #111;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 35px #0005;
+  animation: bob 6s ease-in-out infinite;
+}
+
+.float-tag strong {
+  display: block;
+  font-size: 25px;
+}
+
+.float-tag small {
+  font-size: 10px;
+}
+
+.visual-note {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* PROFILE STATS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #1118;
+  overflow: hidden;
+}
+
+.stat {
+  padding: 25px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+}
+
+.stat:last-child {
+  border: 0;
+}
+
+.stat strong {
+  font-size: 32px;
+  display: block;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.stat span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 95px 0;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-end;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+  margin: 14px 0 0;
+}
+
+.section-heading p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 330px;
+  margin: 0;
+}
+
+/* CAMPAIGN RESULTS */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.work-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  overflow: hidden;
+  transition:
+    transform .3s,
+    border-color .3s,
+    box-shadow .3s;
+}
+
+.work-card:hover {
+  transform: translateY(-7px);
+  border-color: #f4c54260;
+  box-shadow: 0 15px 40px #0005;
+}
+
+.screenshot {
+  padding: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+  position: relative;
+  cursor: zoom-in;
+  background: #fff;
+}
+
+.screenshot img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1.75;
+  object-fit: contain;
+}
+
+.screenshot span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 5px;
+  font-size: 9px;
+  padding: 6px 9px;
+  background: #000c;
+  color: #fff;
+}
+
+.work-body {
+  padding: 23px;
+}
+
+.label {
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.period {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.work-metrics {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+  margin-top: 20px;
+}
+
+.work-metrics strong {
+  font-size: 28px;
+  display: block;
+  letter-spacing: -1px;
+}
+
+.work-metrics small {
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.work-body p {
+  font-size: 10px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.note {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #888;
+  max-width: 950px;
+  margin-top: 23px;
+}
+
+/* EXPERTISE */
+
+.expertise {
+  border-block: 1px solid var(--line);
+  background: #ffffff02;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.skill {
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s, border-color .3s;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  border-color: #f4c54255;
+}
+
+.skill::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -65px;
+  bottom: -65px;
+  background: #f4c54215;
+  border-radius: 50%;
+  transition: transform .4s;
+}
+
+.skill:hover::after {
+  transform: scale(3);
+}
+
+.icon {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #f4c54233;
+  background: #f4c54209;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 21px;
+}
+
+.skill p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ABOUT */
+
+.about {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 75px;
+}
+
+.monogram {
+  position: relative;
+  background: linear-gradient(135deg, #242018, #0e0e0e);
+  border: 1px solid #f4c54235;
+  border-radius: 14px;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.monogram::before {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border: 1px solid #f4c54222;
+  border-radius: 50%;
+}
+
+.monogram b {
+  font-size: 125px;
+  letter-spacing: -10px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.monogram span {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-top: 20px;
+}
+
+.monogram small {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 12px;
+}
+
+.about-copy p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.facts div {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.facts small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+
+.facts b {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* FLOX ADS PROJECT */
+
+.agency {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+  border: 1px solid #f4c54230;
+  background: linear-gradient(
+    110deg,
+    #f4c54208,
+    #121212
+  );
+  padding: 44px;
+  border-radius: 16px;
+}
+
+.agency-wordmark {
+  font-size: clamp(35px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.agency-sub {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+
+.agency p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.pills span {
+  border: 1px solid var(--line);
+  padding: 7px 11px;
+  border-radius: 30px;
+  font-size: 9px;
+}
+
+/* PROCESS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.step {
+  padding-top: 23px;
+  border-top: 1px solid #f4c54240;
+}
+
+.step b {
+  font-size: 28px;
+  color: #f4c54266;
+}
+
+.step p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding: 85px 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    #f4c54212,
+    transparent 65%
+  );
+}
+
+.contact h2 {
+  font-size: clamp(36px, 5vw, 63px);
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+.contact p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+.contact .actions {
+  justify-content: center;
+}
+
+.email {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* SCREENSHOT LIGHTBOX */
+
+dialog {
+  width: min(96vw, 1500px);
+  max-width: 96vw;
+  border: 1px solid #ffffff30;
+  border-radius: 12px;
+  padding: 48px 12px 12px;
+  background: #121212;
+  color: white;
+}
+
+dialog::backdrop {
+  background: #000d;
+  backdrop-filter: blur(5px);
+}
+
+dialog img {
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  padding: 5px 12px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dialog-title {
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  font-size: 11px;
+}
+
+/* SCROLL REVEAL */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s, transform .7s;
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* KEYFRAMES */
+
+@keyframes drift {
+  to {
+    transform: translate(100px, 90px);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+    box-shadow: 0 0 3px var(--gold);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-12px) rotate(-2deg);
+  }
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleY(.1);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .hero {
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .ring {
+    width: 310px;
+    height: 310px;
+  }
+
+  .ring.two {
+    width: 250px;
+    height: 250px;
+  }
+
+  .work-grid {
+    gap: 12px;
+  }
+
+  .work-body {
+    padding: 18px;
+  }
+
+  .about {
+    gap: 35px;
+  }
+
+  .agency {
+    gap: 25px;
+    padding: 30px;
+  }
+
+  .skill {
+    padding: 22px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  nav {
+    height: 69px;
+  }
+
+  .logo {
+    font-size: 13px;
+  }
+
+  .navlinks {
+    gap: 14px;
+    font-size: 10px;
+  }
+
+  .navlinks .hide-mobile {
+    display: none;
+  }
+
+  .navlinks .contact-link {
+    padding: 9px 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 46px 0 45px;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 12.6vw, 64px);
+    letter-spacing: -2.6px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-copy {
+    font-size: 12px;
+  }
+
+  .badge {
+    font-size: 8px;
+    letter-spacing: .6px;
+  }
+
+  .meta {
+    font-size: 9px;
+    gap: 15px;
+  }
+
+  .visual {
+    min-height: 365px;
+    width: 95%;
+    margin: auto;
+  }
+
+  .dashboard {
+    padding: 22px;
+    width: 95%;
+  }
+
+  .dash-number {
+    font-size: 55px;
+  }
+
+  .chart {
+    height: 105px;
+  }
+
+  .ring {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring.two {
+    width: 245px;
+    height: 245px;
+  }
+
+  .float-tag {
+    bottom: 0;
+    right: -5px;
+  }
+
+  .visual-note {
+    font-size: 9px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat {
+    padding: 20px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  .stat strong {
+    font-size: 28px;
+  }
+
+  .stat span {
+    font-size: 9px;
+  }
+
+  .section {
+    padding: 62px 0;
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 27px;
+  }
+
+  .section-heading p {
+    margin-top: 18px;
+    max-width: none;
+  }
+
+  h2 {
+    font-size: 33px;
+    letter-spacing: -1px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .work-body {
+    padding: 23px;
+  }
+
+  .screenshot img {
+    aspect-ratio: auto;
+  }
+
+  .skills {
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+  }
+
+  .skill {
+    padding: 18px 14px;
+  }
+
+  .skill h3 {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .skill p {
+    font-size: 10px;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .monogram {
+    min-height: 270px;
+  }
+
+  .monogram b {
+    font-size: 100px;
+  }
+
+  .agency {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 26px;
+  }
+
+  .agency-wordmark {
+    font-size: 53px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact h2 {
+    font-size: 38px;
+  }
+
+  .contact p {
+    font-size: 11px;
+  }
+
+  .btn {
+    font-size: 11px;
+    padding: 14px 18px;
+    gap: 18px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    font-size: 9px;
+  }
+
+  .note {
+    font-size: 9px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient" aria-hidden="true">
+  <div class="noise"></div>
+</div>
+
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">
+      PRANSHU<span> RATHAUR ↗</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="#work">Results</a>
+      <a class="hide-mobile" href="#expertise">Expertise</a>
+      <a class="hide-mobile" href="#about">About</a>
+      <a class="contact-link" href="#contact">
+        Let’s connect ↗
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section id="home" class="container hero">
+  <div class="reveal">
+    <div class="badge">
+      <i></i>
+      PERFORMANCE MARKETER · JAIPUR
+    </div>
+
+    <h1>
+      Turning clicks<br>
+      into <span class="gradient">meaningful<br>results.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      I’m Pranshu Rathaur. Meta Ads is my focus.
+    </p>
+
+    <p class="hero-copy">
+      With 1.5+ years of hands-on digital marketing experience,
+      I manage campaigns for lead generation, engagement and sales —
+      from setup and landing pages to tracking and optimization.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="#work">
+        Explore campaign results ↗
+      </a>
+
+      <a
+        class="btn outline"
+        href="https://floxads.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        Visit FLOX ADS ↗
+      </a>
+    </div>
+
+    <div class="meta">
+      <span>Meta Ads specialist</span>
+      <span>Open to opportunities</span>
+    </div>
+  </div>
+
+  <div class="visual reveal">
+    <span class="visual-note">
+      A snapshot of my campaign work
+    </span>
+
+    <div class="ring"></div>
+    <div class="ring two"></div>
+
+    <div class="dashboard">
+      <div class="dash-top">
+        <span>FLOX ADS / META ADS</span>
+        <b>SNAPSHOT 01 ↗</b>
+      </div>
+
+      <div class="dash-number">714</div>
+
+      <div class="dash-caption">
+        Recorded website subscribe events
+      </div>
+
+      <div class="chart" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+
+      <div class="dash-bottom">
+        <span>27 AUG – 02 SEP 2026</span>
+        <span>Decorative chart</span>
+      </div>
+    </div>
+
+    <div class="float-tag">
+      <strong>₹4.58</strong>
+      <small>
+        Lowest campaign cost / event<br>
+        in snapshot 01
+      </small>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE STATS -->
+
+<div class="container stats reveal">
+  <div class="stat">
+    <strong>1.5+</strong>
+    <span>Years of hands-on experience</span>
+  </div>
+
+  <div class="stat">
+    <strong>Meta Ads</strong>
+    <span>Primary specialization</span>
+  </div>
+
+  <div class="stat">
+    <strong>3</strong>
+    <span>Campaign dashboard snapshots</span>
+  </div>
+
+  <div class="stat">
+    <strong>Jaipur</strong>
+    <span>Rajasthan, India</span>
+  </div>
+</div>
+
+<!-- CAMPAIGN SCREENSHOTS -->
+
+<section id="work" class="container section">
+  <div class="section-heading reveal">
+    <div>
+      <div class="eyebrow">01 / Campaign evidence</div>
+      <h2>
+        The work behind<br>
+        the <span class="gold">numbers.</span>
+      </h2>
+    </div>
+
+    <p>
+      Original Meta Ads dashboard screenshots.
+      Explore the recorded events, reporting periods
+      and campaign-level costs.
+    </p>
+  </div>
+
+  <div class="work-grid">
+
+    <article class="work-card reveal">
+      <button
+        class="screenshot"
+        data-title="Campaign snapshot 01"
+        aria-label="Open campaign screenshot 01"
+      >
+        <!-- FIRST SCREENSHOT URL HERE -->
+        <img
+          src="campaign-01.jpg"
+          alt="FLOX ADS Meta campaigns: August 27 to September 2, 2026"
+          loading="lazy"
+        >
+        <span>View full screenshot ↗</span>
+      </button>
+
+      <div class="work-body">
+        <div class="label">Meta Ads / Snapshot 01</div>
+        <h3>Subscription-focused campaigns</h3>
+        <div class="period">27 Aug – 02 Sep 2026</div>
+
+        <div class="work-metrics">
+          <div>
+            <strong>714</strong>
+            <small>Subscribe events</small>
+          </div>
+          <div>
+            <strong>₹4.58</strong>
+            <small>Lowest cost / event</small>
+          </div>
+        </div>
+
+        <p>
+          Seven visible subscription campaigns.
+          The lowest-cost campaign records 71 events
+          with ₹325.23 in spend.
+        </p>
+      </div>
+    </article>
+
+    <article class="work-card reveal">
+      <button
+        class="screenshot"
+        data-title="Campaign snapshot 02"
+        aria-label="Open campaign screenshot 02"
+      >
+        <!-- SECOND SCREENSHOT URL HERE -->
+        <img
+          src="campaign-02.jpg"
+          alt="FLOX ADS Meta campaigns: August 16 to September 14, 2026"
+          loading="lazy"
+        >
+        <span>View full screenshot ↗</span>
+      </button>
+
+      <div class="work-body">
+        <div class="label">Meta Ads / Snapshot 02</div>
+        <h3>Multiple campaigns. Clear results.</h3>
+        <div class="period">16 Aug – 14 Sep 2026</div>
+
+        <div class="work-metrics">
+          <div>
+            <strong>945</strong>
+            <small>Subscribe events</small>
+          </div>
+          <div>
+            <strong>₹7.15</strong>
+            <small>Lowest cost / event</small>
+          </div>
+        </div>
+
+        <p>
+          Six visible subscription campaigns.
+          One campaign records 349 events at ₹9.16 per event.
+        </p>
+      </div>
+    </article>
+
+    <article class="work-card reveal">
+      <button
+        class="screenshot"
+        data-title="Campaign snapshot 03"
+        aria-label="Open campaign screenshot 03"
+      >
+        <!-- THIRD SCREENSHOT URL HERE -->
+        <img
+          src="campaign-03.jpg"
+          alt="FLOX ADS Meta campaigns: September 16 to September 18, 2026"
+          loading="lazy"
+        >
+        <span>View full screenshot ↗</span>
+      </button>
+
+      <div class="work-body">
+        <div class="label">Meta Ads / Snapshot 03</div>
+        <h3>A focused three-day snapshot</h3>
+        <div class="period">16 – 18 Sep 2026</div>
+
+        <div class="work-metrics">
+          <div>
+            <strong>428</strong>
+            <small>Subscribe events</small>
+          </div>
+          <div>
+            <strong>₹8.72</strong>
+            <small>Lowest cost / event</small>
+          </div>
+        </div>
+
+        <p>
+          Eight visible subscription campaigns.
+          Campaign 5 records 117 events with ₹1,019.96 in spend.
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="note">
+    Totals use the visible subscription campaign rows only.
+    “Website Subscribe” is a Meta-reported event, not independent
+    confirmation of unique subscribers, completed Telegram joins
+    or revenue. Awareness reach is excluded. Accounts and reporting
+    windows differ, so these snapshots are not added into a lifetime total.
+  </p>
+</section>
+
+<!-- EXPERTISE -->
+
+<section id="expertise" class="expertise">
+  <div class="container section">
+    <div class="section-heading reveal">
+      <div>
+        <div class="eyebrow">02 / Core expertise</div>
+        <h2>
+          Built for the complete<br>
+          <span class="gold">campaign journey.</span>
+        </h2>
+      </div>
+
+      <p>
+        Practical skills that connect campaign setup,
+        audience selection, the post-click experience
+        and performance analysis.
+      </p>
+    </div>
+
+    <div class="skills">
+      <article class="skill reveal">
+        <div class="icon">↗</div>
+        <h3>Meta Ads Management</h3>
+        <p>
+          Campaign setup and management across lead generation,
+          engagement and sales objectives.
+        </p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="icon">◎</div>
+        <h3>Audience Targeting</h3>
+        <p>
+          Relevant audience planning and targeting decisions
+          informed by campaign performance.
+        </p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="icon">⌘</div>
+        <h3>Pixel & Event Tracking</h3>
+        <p>
+          Meta Pixel setup, conversion tracking and event tracking
+          linked to campaign goals.
+        </p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="icon">▥</div>
+        <h3>Campaign Optimization</h3>
+        <p>
+          Performance analysis and campaign adjustments based on
+          spend, events and cost per result.
+        </p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="icon">⌁</div>
+        <h3>Landing Page Integration</h3>
+        <p>
+          Campaigns supported by landing pages, with clear calls
+          to action and event integration.
+        </p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="icon">⚙</div>
+        <h3>Marketing Automation</h3>
+        <p>
+          Marketing automation setup to support campaign workflows
+          and the next step after conversion.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="container section">
+  <div class="about">
+
+    <div class="monogram reveal">
+      <b class="gradient">PR</b>
+      <span>PRANSHU RATHAUR</span>
+      <small>Performance Marketer · FLOX ADS</small>
+    </div>
+
+    <div class="about-copy reveal">
+      <div class="eyebrow">03 / About me</div>
+
+      <h2>
+        Hands-on marketer.<br>
+        <span class="gold">Always learning.</span>
+      </h2>
+
+      <p>
+        I’m originally from Uttar Pradesh and currently based in
+        Jaipur, Rajasthan. I have over 1.5 years of hands-on
+        experience in digital marketing, primarily specializing
+        in Meta Ads.
+      </p>
+
+      <p>
+        I’ve managed multiple client campaigns and worked across
+        setup, landing page integration, tracking and optimization.
+        I have completed a Digital Marketing course and am pursuing
+        my second year of graduation.
+      </p>
+
+      <p>
+        I’m looking for an opportunity to bring my practical skills
+        to a team, learn continuously and contribute to its growth.
+      </p>
+
+      <div class="facts">
+        <div>
+          <small>EXPERIENCE</small>
+          <b>1.5+ years · Hands-on</b>
+        </div>
+
+        <div>
+          <small>LOCATION</small>
+          <b>Jaipur, Rajasthan</b>
+        </div>
+
+        <div>
+          <small>EDUCATION</small>
+          <b>Graduation · Second year</b>
+        </div>
+
+        <div>
+          <small>TRAINING</small>
+          <b>Digital Marketing · Completed</b>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FLOX ADS -->
+
+<section class="container">
+  <div class="agency reveal">
+    <div>
+      <div class="agency-wordmark">
+        FLOX <span class="gold">ADS</span>
+      </div>
+
+      <div class="agency-sub">
+        STRATEGY · CREATIVE · PERFORMANCE
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow">04 / My website</div>
+
+      <h3>Where my marketing work comes together.</h3>
+
+      <p>
+        FLOX ADS is my digital marketing brand.
+        My website presents performance marketing services
+        alongside SEO, website development and creative support.
+      </p>
+
+      <div class="pills">
+        <span>Performance Marketing</span>
+        <span>Landing Pages</span>
+        <span>SEO</span>
+        <span>Website Development</span>
+      </div>
+
+      <a
+        class="btn outline"
+        href="https://floxads.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        Explore floxads.com ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="container section">
+  <div class="section-heading reveal">
+    <div>
+      <div class="eyebrow">05 / How I approach campaigns</div>
+
+      <h2>
+        Plan. Launch. Learn.<br>
+        <span class="gold">Optimize.</span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="steps">
+    <article class="step reveal">
+      <b>01</b>
+      <h3>Define the goal</h3>
+      <p>
+        Understand the objective, audience, budget and action
+        the campaign needs to drive.
+      </p>
+    </article>
+
+    <article class="step reveal">
+      <b>02</b>
+      <h3>Build & connect</h3>
+      <p>
+        Set up the campaign, landing page and tracking so the
+        journey works together.
+      </p>
+    </article>
+
+    <article class="step reveal">
+      <b>03</b>
+      <h3>Read the performance</h3>
+      <p>
+        Review spend, recorded events and cost per result to
+        understand campaign delivery.
+      </p>
+    </article>
+
+    <article class="step reveal">
+      <b>04</b>
+      <h3>Improve the next move</h3>
+      <p>
+        Adjust targeting and campaign decisions using what
+        the performance data shows.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+  <div class="container reveal">
+    <div class="eyebrow">
+      Open to performance marketing opportunities
+    </div>
+
+    <h2>
+      Let’s build the next<br>
+      <span class="gradient">growth story.</span>
+    </h2>
+
+    <p>
+      I’m ready to bring my Meta Ads experience, tracking skills
+      and learning mindset to your team.
+      Let’s discuss how I can contribute.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="mailto:floxads.co@gmail.com">
+        Discuss an opportunity ↗
+      </a>
+
+      <a
+        class="btn outline"
+        href="https://wa.me/919214670077"
+        target="_blank"
+        rel="noopener"
+      >
+        Chat on WhatsApp ↗
+      </a>
+    </div>
+
+    <a class="email" href="mailto:floxads.co@gmail.com">
+      floxads.co@gmail.com
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <span>© 2026 Pranshu Rathaur · FLOX ADS</span>
+  <a href="#home">Back to top ↑</a>
+</footer>
+
+<!-- FULL-SIZE SCREENSHOT VIEWER -->
+
+<dialog id="lightbox" aria-label="Full campaign screenshot">
+  <span class="dialog-title"></span>
+  <button class="close" aria-label="Close screenshot">
+    Close ×
+  </button>
+  <img alt="Full campaign screenshot">
+</dialog>
+
+<script>
+document.documentElement.classList.add("js");
+
+/* SCROLL REVEAL */
+
+const items = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  items.forEach(item => observer.observe(item));
+} else {
+  items.forEach(item => item.classList.add("visible"));
+}
+
+/* SCROLL PROGRESS */
+
+const progress = document.querySelector(".progress");
+let ticking = false;
+
+function updateProgress() {
+  const distance =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  progress.style.width =
+    (distance > 0 ? window.scrollY / distance * 100 : 0) + "%";
+
+  ticking = false;
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!ticking) {
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  },
+  { passive: true }
+);
+
+window.addEventListener("resize", updateProgress);
+
+updateProgress();
+
+/* SCREENSHOT LIGHTBOX */
+
+const lightbox = document.getElementById("lightbox");
+let lastButton;
+
+document.querySelectorAll(".screenshot").forEach(button => {
+  button.addEventListener("click", () => {
+    lastButton = button;
+
+    const source = button.querySelector("img");
+
+    lightbox.querySelector("img").src = source.src;
+    lightbox.querySelector("img").alt = source.alt;
+
+    lightbox.querySelector(".dialog-title").textContent =
+      button.dataset.title;
+
+    lightbox.showModal();
+  });
+});
+
+lightbox.querySelector(".close").addEventListener(
+  "click",
+  () => lightbox.close()
+);
+
+lightbox.addEventListener("close", () => {
+  lastButton?.focus();
+});
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    const rect = lightbox.getBoundingClientRect();
+
+    if (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    ) {
+      lightbox.close();
+    }
+  }
+});
+</script>
+
+</body>
+</html>
